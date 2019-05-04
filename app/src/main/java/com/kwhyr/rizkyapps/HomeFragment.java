@@ -16,16 +16,18 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v  = inflater.inflate(R.layout.fragment_home, container, false);
 
-        final TabLayout tablayout = v.findViewById(R.id.hometablayout);
-        final ViewPager viewPager = v.findViewById(R.id.homeviewpager);
-        final ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getFragmentManager());
+        TabLayout tablayout = v.findViewById(R.id.hometablayout);
+        ViewPager viewPager = v.findViewById(R.id.homeviewpager);
 
-        viewPagerAdapter.AddFragment(new FragmentHomeProfile(),"Profile");
-        viewPagerAdapter.AddFragment(new FragmentHomeInterest(),"Interest");
-
-        viewPager.setAdapter(viewPagerAdapter);
+        setupViewPager(viewPager);
         tablayout.setupWithViewPager(viewPager);
 
         return v;
+    }
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager());
+        viewPagerAdapter.AddFragment(new FragmentHomeProfile(), "Profile");
+        viewPagerAdapter.AddFragment(new FragmentHomeInterest(), "Interest");
+        viewPager.setAdapter(viewPagerAdapter);
     }
 }

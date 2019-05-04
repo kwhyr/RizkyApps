@@ -19,16 +19,18 @@ public class MusicvideoFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v  = inflater.inflate(R.layout.fragment_musicvideo, container, false);
 
-        final TabLayout tablayout = v.findViewById(R.id.mvtablayout);
-        final ViewPager viewPager = v.findViewById(R.id.mvviewpager);
-        final ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getFragmentManager());
+        TabLayout tablayout = v.findViewById(R.id.mvtablayout);
+        ViewPager viewPager = v.findViewById(R.id.mvviewpager);
 
-        viewPagerAdapter.AddFragment(new FragmentMvMusic(),"Music Favorite");
-        viewPagerAdapter.AddFragment(new FragmentMvVideo(),"Video Favorite");
-
-        viewPager.setAdapter(viewPagerAdapter);
+        setupViewPager(viewPager);
         tablayout.setupWithViewPager(viewPager);
 
         return v;
+    }
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager());
+        viewPagerAdapter.AddFragment(new FragmentMvMusic(), "Music Favorite");
+        viewPagerAdapter.AddFragment(new FragmentMvVideo(), "Video Favorite");
+        viewPager.setAdapter(viewPagerAdapter);
     }
 }

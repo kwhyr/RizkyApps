@@ -11,22 +11,23 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class DailyFragment extends Fragment {
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v  = inflater.inflate(R.layout.fragment_daily, container, false);
 
-        final TabLayout tablayout = v.findViewById(R.id.dailytablayout);
-        final ViewPager viewPager = v.findViewById(R.id.dailyviewpager);
-        final ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getFragmentManager());
+        TabLayout tablayout = v.findViewById(R.id.dailytablayout);
+        ViewPager viewPager = v.findViewById(R.id.dailyviewpager);
 
-        viewPagerAdapter.AddFragment(new FragmentDailyDaily(),"Daily Activity");
-        viewPagerAdapter.AddFragment(new FragmentDailyFriends(),"Friends List");
-
-        viewPager.setAdapter(viewPagerAdapter);
+        setupViewPager(viewPager);
         tablayout.setupWithViewPager(viewPager);
 
         return v;
+    }
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager());
+        viewPagerAdapter.AddFragment(new FragmentDailyDaily(), "Daily Activity");
+        viewPagerAdapter.AddFragment(new FragmentDailyFriends(), "Friends List");
+        viewPager.setAdapter(viewPagerAdapter);
     }
 }

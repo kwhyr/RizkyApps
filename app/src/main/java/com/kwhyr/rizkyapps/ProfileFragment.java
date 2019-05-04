@@ -16,16 +16,18 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v  = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        final TabLayout tablayout = v.findViewById(R.id.profiletablayout);
-        final ViewPager viewPager = v.findViewById(R.id.profileviewpager);
-        final ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getFragmentManager());
+        TabLayout tablayout = v.findViewById(R.id.profiletablayout);
+        ViewPager viewPager = v.findViewById(R.id.profileviewpager);
 
-        viewPagerAdapter.AddFragment(new FragmentProfileProfile(),"Profile");
-        viewPagerAdapter.AddFragment(new FragmentProfileAbout(),"About");
-
-        viewPager.setAdapter(viewPagerAdapter);
+        setupViewPager(viewPager);
         tablayout.setupWithViewPager(viewPager);
 
         return v;
+    }
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager());
+        viewPagerAdapter.AddFragment(new FragmentProfileProfile(), "Profile");
+        viewPagerAdapter.AddFragment(new FragmentProfileAbout(), "About");
+        viewPager.setAdapter(viewPagerAdapter);
     }
 }
