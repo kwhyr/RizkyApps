@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">RizkyApps</string>
+    <string name="splash_screen_logo">splash screen logo</string>
+    <string name="rizky_apps">Rizky Apps</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="start">Start</string>
+    <string name="home">Home</string>
+    <string name="daily_activity">Daily Activity</string>
+    <string name="gallery">Gallery</string>
+    <string name="music_video"><![CDATA[Music & Video]]></string>
+    <string name="profile">Profile</string>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+
+</resources>
