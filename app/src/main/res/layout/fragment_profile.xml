@@ -1,22 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/profiletablayout"
+    <ImageView
+        android:id="@+id/viewbackground"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        app:tabMode="fixed"
-        app:tabGravity="fill"
-        app:tabIndicatorColor="@color/white"
-        app:tabTextColor="@color/white"/>
-    <android.support.v4.view.ViewPager
-        android:id="@+id/profileviewpager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="150dp"
+        android:background="@drawable/background" />
 
-</LinearLayout>
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@id/viewbackground"
+        android:background="#939597" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp"
+        app:civ_border_color="@color/white"
+        app:civ_fill_color="#f1f1f2"
+        app:civ_border_width="4dp"
+        app:civ_border_overlay="true"
+        android:src="@drawable/profile_rizky"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/separator"
+        android:layout_marginTop="60dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/txtProfileNama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Muhamad Rizky Fauzan"
+                android:textStyle="bold"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/txtUserBlood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:paddingStart="40dp"
+                android:paddingRight="40dp"
+                android:paddingEnd="40dp"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Lahir di kota Majalengka pada tanggal 17 Mei 1998, Besar di Garut dan akhirnya merantau ke Bandung untuk kuliah di Universitas Komputer Indonesia, merupakan anak kedua dari tiga bersaudara , mempunyai keahlian lebih di bidang teknologi."
+                android:textSize="15sp"/>
+
+            <View
+                android:id="@+id/Separator2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#939597" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact"
+                android:textStyle="bold"
+                android:textSize="23sp"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp">
+                <ImageView
+                    android:id="@+id/imgcall"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:tint="@color/colorPrimary"
+                    android:src="@drawable/ic_call"/>
+                <ImageView
+                    android:id="@+id/imgmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:tint="@color/colorPrimary"
+                    android:src="@drawable/ic_mail"/>
+                <ImageView
+                    android:id="@+id/imgfb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:tint="@color/colorPrimary"
+                    android:src="@drawable/ic_facebook"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="12sp"
+                    android:text="+62812-2356-6695"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="12sp"
+                    android:text="rizkyc993@gmail.com"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="12sp"
+                    android:text="fb.com/nommaker"
+                    android:gravity="center"/>
+            </LinearLayout>
+            <View
+                android:id="@+id/Separator3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="#939597" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Find Me"
+                android:textStyle="bold"
+                android:textSize="23sp"/>
+
+            <com.google.android.gms.maps.MapView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/mapid" />
+            <View
+                android:id="@+id/Separator4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#939597" />
+            <Button
+                android:id="@+id/aboutapp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:text="About this App"
+                android:background="@null"
+                android:textColor="@color/colorPrimary"
+                android:drawableLeft="@drawable/ic_warning"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

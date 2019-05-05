@@ -1,22 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/hometablayout"
+    <ImageView
+        android:id="@+id/viewbackground"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/background" />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@id/viewbackground"
+        android:background="#939597" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp"
+        app:civ_border_color="@color/white"
+        app:civ_fill_color="#f1f1f2"
+        app:civ_border_width="4dp"
+        app:civ_border_overlay="true"
+        android:src="@drawable/profile_rizky"/>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/separator"
+    android:layout_marginTop="60dp">
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        app:tabMode="fixed"
-        app:tabGravity="fill"
-        app:tabIndicatorColor="@color/white"
-        app:tabTextColor="@color/white" />
-    <android.support.v4.view.ViewPager
-        android:id="@+id/homeviewpager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingBottom="45dp">
+        <TextView
+            android:id="@+id/txtProfileNama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Muhamad Rizky Fauzan"
+            android:textSize="25sp" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/txtUserBlood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="40dp"
+            android:paddingStart="40dp"
+            android:paddingRight="40dp"
+            android:paddingEnd="40dp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Lahir di kota Majalengka pada tanggal 17 Mei 1998, Besar di Garut dan akhirnya merantau ke Bandung untuk kuliah di Universitas Komputer Indonesia, merupakan anak kedua dari tiga bersaudara , mempunyai keahlian lebih di bidang teknologi."
+            android:textSize="15sp"/>
+
+        <View
+            android:id="@+id/Separator2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="#939597" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:paddingLeft="40dp"
+            android:paddingStart="40dp"
+            android:paddingRight="40dp"
+            android:paddingEnd="40dp"
+            android:text="Memiliki minat di bidang Game and Software Development, Hobi saya adalah bermain game dan tidur, Menyukai semua makanan dan minuman kecuali yang diharamkan dalam islam dan mengandung sayuran. dan bercita-cita menjadi seorang Guru."
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+</ScrollView>
+
+</RelativeLayout>

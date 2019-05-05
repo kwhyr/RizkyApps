@@ -19,6 +19,27 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+/*
+
+NIM   : 10116051
+Nama  : Muhamad Rizky Fauzan
+Kelas : AKB2/IF2
+
+Change log
+    1. 02/05/2019 12.58 PM : Membuat Splash Screen
+    2. 02/05/2019 16.11 PM : Membuat Walkthrough
+    3. 03/05/2019 16.50 PM : Membuat Membuat Navigation Drawer
+    4. 04/05/2019 20.35 PM : Fix Sub Fragment
+    5. 04/05/2019 23.16 PM : Mengisi Fragment Home dan Gallery
+    6. 05/05/2019 01.08 AM : Mengisi Daily Fragment
+    7. 05/05/2019 02.50 AM : Membuat Contact Call, Mail, dan Facebook di Profile Fragment
+    8. 05/05/2019 05.09 AM : Membuat Map ,Marker Map, dan Custom Dialog About App
+    9. 05/05/2019 06.42 AM : Fix Daily Fragment RecyclerView Adapter
+    10.05/05/2019 10.04 AM : Membuat music player dan video player
+    11.05/05/2019 21.50 PM : Fix Music Player
+
+ */
+
 public class WalkthroughActivity extends AppCompatActivity {
 
     private ViewPager viewPager;

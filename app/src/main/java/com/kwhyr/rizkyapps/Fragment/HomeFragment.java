@@ -1,23 +1,23 @@
-package com.kwhyr.rizkyapps;
+package com.kwhyr.rizkyapps.Fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class FragmentHomeProfile extends Fragment {
-    View v;
+import com.kwhyr.rizkyapps.R;
 
-    public FragmentHomeProfile() {
-    }
-
+public class HomeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.home_profilefragment, container, false);
+        View v  = inflater.inflate(R.layout.fragment_home, container, false);
+
         return v;
     }
 }
